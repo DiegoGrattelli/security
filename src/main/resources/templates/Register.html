@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+
+    <!-- Enlace a Bootstrap CSS (puedes utilizar la versión que prefieras) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Agrega aquí cualquier otro elemento del encabezado que desees -->
+
+</head>
+<body>
+
+    <!-- Contenedor principal con Bootstrap -->
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="text-center">Registro</h3>
+                    </div>
+                    <div class="card-body">
+                        <!-- Formulario de registro con Thymeleaf -->
+                        <form th:action="@{/register}" method="post">
+                            <div class="form-group">
+                                <label for="name">Usuario:</label>
+                                <input type="text" class="form-control" id="name" name="name" required="required">
+                            </div>
+                            <div class="form-group">
+                                <label for="direccion">Direccion:</label>
+                                <input type="direccion" class="form-control" id="direccion" name="direccion" required="required">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" class="form-control" id="email" name="email" required="required">
+                            </div>
+                            <div class="form-group">
+                                <label for="contraseña">Contraseña:</label>
+                                <input type="contraseña" class="form-control" id="contraseña" name="contraseña" required="required">
+                            </div>
+                            <button type="submit" class="btn btn-dark">Guardar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts y archivos JS de Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Agrega aquí cualquier otro elemento del cuerpo que desees -->
+
+</body>
+</html>

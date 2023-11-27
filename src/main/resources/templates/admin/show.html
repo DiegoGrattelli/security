@@ -1,0 +1,57 @@
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Ecommerce Admin</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head th:insert = "~{admin/template_admin::head}">
+    </head>
+    <body>
+        <div th:insert = "~{admin/template_admin::header}"></div>
+         <div class="container"><br>
+            <h1>Ver Reservas</h1>
+            <!--  <a class="btn btn-primary" th:onclick="guardarProducto"> Crear producto </a>-->
+            <table class="table table-dark table-striped mt-4">
+                <thead>
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">fecha</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Cliente</th>
+                        <th scope="col">Editar</th>
+                        <th scope="col">Eliminar</th> 
+                    </tr> 
+                </thead>
+                <tbody>
+                    <tr th:each="libro: ${libros}">
+                        <td th:text="${libro.name}"></td>
+                        <td th:text="${libro.FechaLibro}"></td>
+                        <td th:text="${libro.precio}"></td>
+                        <td th:text="${libro.tipoLibroEntity.descripcion}"></td>
+                        <td th:text="${libro.userEntity.name}"></td>
+                        <td> <a class="btn btn-warning" >Editar</a></td>
+                        <td> <a class="btn btn-danger" th:href="@{/admin/delete/{id}(id = ${libro.id})}">Eliminar</a> </td>
+                    </tr> 
+                </tbody>
+
+            </table>
+
+
+        </div>
+        <div class="footer" th:insert = "~{admin/template_admin::footer}"></div>
+
+    </body>
+    
+    <style>
+        .body{
+            position: relative;
+        }
+        .footer{
+            position: absolute;
+            bottom:0px;
+            height: 60px;
+            width: 100%;
+        }
+    </style>
+
+</html>
